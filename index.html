@@ -11,13 +11,51 @@
       sizes="32x32"
       href="./images/favicon-32x32.png"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="style.css" />
 
     <title>Frontend Mentor | Base Apparel coming soon page</title>
   </head>
   <body>
-    We're coming soon Hello fellow shoppers! We're currently building our new
-    fashion store. Add your email below to stay up-to-date with announcements
-    and our launch deals. Email Address
+    <section class="hero">
+      <div class="logo">
+        <img src="./images/logo.svg" alt="logo" />
+      </div>
+      <picture class="hero-img">
+        <source
+          srcset="./images/hero-desktop.jpg"
+          media="(min-width: 1440px)"
+        />
+        <img src="./images/hero-mobile.jpg" alt="Woman posing" />
+      </picture>
+      <div class="hero-content">
+        <h1 class="hero-title"><span class="thin">We're</span> coming soon</h1>
+        <p class="hero-description">
+          Hello fellow shoppers! We're currently building our new fashion store.
+          Add your email below to stay up-to-date with announcements and our
+          launch deals.
+        </p>
+        <form class="form" action="submit">
+          <input
+            class="email"
+            type="email"
+            size="30"
+            required
+            placeholder="Email Address"
+          />
+          <input class="btn" type="submit" value="" />
+          <img class="icon-error" src="./images/icon-error.svg" alt="error" />
+        </form>
+        <p class="empty-email-message"></p>
+        <p class="invalid-email-message"></p>
+      </div>
+    </section>
+
+    <script src="script.js"></script>
   </body>
 </html>
