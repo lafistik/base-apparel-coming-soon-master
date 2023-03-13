@@ -155,9 +155,9 @@ img {
   color: var(--clr-red);
 }
 
-@media (min-width: 90em) {
+@media (min-width: 56.25em) {
   .hero {
-    padding-left: 10rem;
+    padding-left: 3rem;
     max-width: 100%;
     height: 100vh;
 
@@ -203,5 +203,23 @@ img {
 
   .btn {
     width: 6.25rem;
+  }
+}
+
+@media (min-width: 70em) {
+  .hero {
+    padding-left: 6rem;
+  }
+}
+
+@media (min-width: 90em) {
+  .hero {
+    padding-left: 10rem;
+  }
+}
+
+@media (min-width: 110em) {
+  .hero {
+    padding-left: 14rem;
   }
 }
