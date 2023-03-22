@@ -5,10 +5,19 @@ const invalidMessage = document.querySelector(".invalid-email-message");
 const errorIcon = document.querySelector(".icon-error");
 
 form.addEventListener("submit", (e) => {
+  const regexMatch = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(
+    email.value
+  );
+
   if (!email.value) {
     e.preventDefault();
     emptyMessage.textContent = "You must type in an email";
     errorIcon.style.display = "block";
+  } else if (!regexMatch) {
+    e.preventDefault();
+    invalidMessage.textContent = "Please provide a valid email";
+    errorIcon.style.display = "block";
+    emptyMessage.textContent = "";
   } else {
     emptyMessage.textContent = "";
     errorIcon.style.display = "none";
@@ -17,9 +26,6 @@ form.addEventListener("submit", (e) => {
 
 email.addEventListener("input", () => {
   if (email.value) {
-    const regexMatch = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(
-      email.value
-    );
     if (regexMatch) {
       invalidMessage.textContent = "";
       errorIcon.style.display = "none";
